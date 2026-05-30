@@ -101,7 +101,11 @@
   .foot a.lnk{color:var(--muted)}
   .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:middle}
   .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+  .legend .lg{cursor:pointer;user-select:none;transition:opacity .15s}
+  .legend .lg.off{opacity:.32}
   .leaflet-popup-content{font-size:13px}
+  .mk{box-sizing:border-box;width:22px;height:22px;border-radius:50%;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.45)}
+  .mk-e{font-size:18px;line-height:22px;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.5)}
   @media(max-width:520px){
     .hero h1{font-size:22px}
     .tl:before{left:50px}.tl li{padding-left:70px}.tl li .time{width:44px}.tl li:before{left:45px}
@@ -215,13 +219,13 @@
   <div class="card" style="padding:10px">
     <div id="map" style="height:430px;border-radius:12px;overflow:hidden;background:var(--card2)"></div>
     <div class="legend">
-      <span><span class="dot" style="background:#ff8a5c"></span>D1 남서부</span>
-      <span><span class="dot" style="background:#3ea6ff"></span>D2 서귀포·수국</span>
-      <span><span class="dot" style="background:#37d399"></span>D3 동부</span>
-      <span><span class="dot" style="background:#ff7eb6"></span>숙소</span>
-      <span><span class="dot" style="background:#ffcf5c"></span>공항</span>
+      <span class="lg" data-day="d1"><span class="dot" style="background:#ff8a5c"></span>D1 남서부</span>
+      <span class="lg" data-day="d2"><span class="dot" style="background:#3ea6ff"></span>D2 서귀포</span>
+      <span class="lg" data-day="d3"><span class="dot" style="background:#37d399"></span>D3 동부</span>
+      <span>🛏️ 숙소</span>
+      <span>✈️ 공항</span>
     </div>
-    <div class="alt" style="margin-top:6px">📍 마커를 누르면 장소명·네이버 링크. 점선은 일자별 이동 흐름(개략).</div>
+    <div class="alt" style="margin-top:6px">📍 마커=방문 순서(숫자)·네이버 링크. <b>D1/D2/D3 누르면 해당 날만 표시</b>. 점선=이동 흐름.</div>
   </div>
 
   <!-- 일정 -->
@@ -409,45 +413,64 @@
 <script>
 (function(){
   if(typeof L==='undefined'||!document.getElementById('map')) return;
-  var d1='#ff8a5c', d2='#3ea6ff', d3='#37d399', stay='#ff7eb6', air='#ffcf5c';
-  var pts=[
-    [33.5066,126.4929,'제주공항',air,'제주국제공항'],
-    [33.4636,126.3094,'애월 한담해안',d1,'애월 한담해안산책로'],
-    [33.3940,126.2398,'협재·금능 해변',d1,'협재해변'],
-    [33.2906,126.3681,'카멜리아힐(수국)',d1,'카멜리아힐'],
-    [33.2486,126.3539,'화순곶자왈',d1,'화순곶자왈 생태탐방숲길'],
-    [33.2363,126.3137,'산방산·사계해변',d1,'산방산'],
-    [33.2317,126.3146,'용머리해안',d1,'용머리해안'],
-    [33.2283,126.3637,'대평·박수기정 / 난드르바당',d1,'난드르바당'],
-    [33.2386,126.5108,'외돌개',d2,'외돌개'],
-    [33.2497,126.5626,'서귀포 매일올레시장',d2,'서귀포 매일올레시장'],
-    [33.2467,126.5547,'천지연폭포',d2,'천지연폭포'],
-    [33.3877,126.7790,'보롬왓',d2,'보롬왓'],
-    [33.3856,126.8853,'혼인지(수국)',d3,'혼인지'],
-    [33.4239,126.9300,'섭지코지·광치기',d3,'섭지코지'],
-    [33.4437,126.7900,'안돌오름 비밀의 숲',d3,'안돌오름 비밀의숲'],
-    [33.5546,126.7186,'곰막식당',d3,'곰막식당'],
-    [33.5435,126.6695,'함덕·서우봉',d3,'함덕 서우봉'],
-    [33.5118,126.5278,'동문시장',d3,'제주 동문시장'],
-    [33.2283,126.3637,'1박 진한펜션(안덕)',stay,'서귀포 늘바다 애견동반펜션'],
-    [33.2755,126.7155,'2박 스테이반하나(남원)',stay,'제주 스테이반하나 남원'],
-    [33.4890,126.4910,'3박 뜨레비(연동)',stay,'제주 뜨레비호텔']
-  ];
+  var C={d1:'#ff8a5c',d2:'#3ea6ff',d3:'#37d399'};
+  var days={
+    d1:[[33.4636,126.3094,'한담해안산책로','애월 한담해안산책로'],
+        [33.3940,126.2398,'협재·금능 해변','협재해변'],
+        [33.2486,126.3539,'화순곶자왈 숲길','화순곶자왈 생태탐방숲길'],
+        [33.2363,126.3137,'산방산·사계해변','산방산'],
+        [33.2317,126.3146,'용머리해안(외부)','용머리해안'],
+        [33.2906,126.3681,'카멜리아힐(수국)','카멜리아힐'],
+        [33.2283,126.3637,'대평·박수기정·난드르바당','난드르바당']],
+    d2:[[33.2386,126.5108,'외돌개~황우지','외돌개'],
+        [33.2497,126.5626,'서귀포 매일올레시장','서귀포 매일올레시장'],
+        [33.2467,126.5547,'천지연폭포(안고서)','천지연폭포'],
+        [33.3877,126.7790,'보롬왓 수국','보롬왓']],
+    d3:[[33.3856,126.8853,'혼인지 수국','혼인지'],
+        [33.4239,126.9300,'섭지코지·광치기','섭지코지'],
+        [33.4437,126.7900,'안돌오름 비밀의 숲','안돌오름 비밀의숲'],
+        [33.5546,126.7186,'곰막식당','곰막식당'],
+        [33.5435,126.6695,'함덕·서우봉','함덕 서우봉'],
+        [33.5118,126.5278,'동문시장','제주 동문시장']]
+  };
+  var lines={
+    d1:[[33.5066,126.4929],[33.4636,126.3094],[33.3940,126.2398],[33.2363,126.3137],[33.2317,126.3146],[33.2906,126.3681],[33.2283,126.3637]],
+    d2:[[33.2283,126.3637],[33.2386,126.5108],[33.2497,126.5626],[33.3877,126.7790],[33.2755,126.7155]],
+    d3:[[33.2755,126.7155],[33.3856,126.8853],[33.4239,126.9300],[33.4437,126.7900],[33.5546,126.7186],[33.5435,126.6695],[33.5118,126.5278],[33.4890,126.4910]]
+  };
+  var stays=[[33.2300,126.3600,'1박 진한펜션(안덕)','서귀포 늘바다 애견동반펜션'],
+             [33.2755,126.7155,'2박 스테이반하나(남원)','제주 스테이반하나 남원'],
+             [33.4890,126.4910,'3박 뜨레비(연동)','제주 뜨레비호텔']];
   var map=L.map('map',{scrollWheelZoom:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
     {attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:19}).addTo(map);
-  var all=[];
-  pts.forEach(function(p){
-    L.circleMarker([p[0],p[1]],{radius:7,color:'#fff',weight:2,fillColor:p[3],fillOpacity:1})
-     .addTo(map)
-     .bindPopup('<b>'+p[2]+'</b><br><a href="https://search.naver.com/search.naver?query='+encodeURIComponent(p[4])+'" target="_blank" rel="noopener">네이버에서 보기 ↗</a>');
-    all.push([p[0],p[1]]);
+  function pop(n,q){return '<b>'+n+'</b><br><a href="https://search.naver.com/search.naver?query='+encodeURIComponent(q)+'" target="_blank" rel="noopener">네이버에서 보기 ↗</a>';}
+  function numIcon(col,n){return L.divIcon({className:'',html:'<div class="mk" style="background:'+col+'">'+n+'</div>',iconSize:[22,22],iconAnchor:[11,11]});}
+  function emojiIcon(e){return L.divIcon({className:'',html:'<div class="mk-e">'+e+'</div>',iconSize:[22,22],iconAnchor:[11,11]});}
+  var all=[], groups={};
+  Object.keys(days).forEach(function(d){
+    var g=L.layerGroup();
+    L.polyline(lines[d],{color:C[d],weight:3,opacity:.65,dashArray:'4 6'}).addTo(g);
+    days[d].forEach(function(p,i){
+      L.marker([p[0],p[1]],{icon:numIcon(C[d],i+1)}).bindPopup(pop(p[2],p[3])).addTo(g);
+      all.push([p[0],p[1]]);
+    });
+    g.addTo(map); groups[d]=g;
   });
-  function line(c,col){L.polyline(c,{color:col,weight:3,opacity:.65,dashArray:'4 6'}).addTo(map);}
-  line([[33.5066,126.4929],[33.4636,126.3094],[33.3940,126.2398],[33.2363,126.3137],[33.2317,126.3146],[33.2906,126.3681],[33.2283,126.3637]],d1);
-  line([[33.2283,126.3637],[33.2386,126.5108],[33.2497,126.5626],[33.3877,126.7790],[33.2755,126.7155]],d2);
-  line([[33.2755,126.7155],[33.3856,126.8853],[33.4239,126.9300],[33.4437,126.7900],[33.5546,126.7186],[33.5435,126.6695],[33.5118,126.5278],[33.4890,126.4910]],d3);
-  map.fitBounds(all,{padding:[30,30]});
+  L.marker([33.5066,126.4929],{icon:emojiIcon('✈️')}).bindPopup(pop('제주공항','제주국제공항')).addTo(map);
+  all.push([33.5066,126.4929]);
+  stays.forEach(function(s){
+    L.marker([s[0],s[1]],{icon:emojiIcon('🛏️')}).bindPopup(pop(s[2],s[3])).addTo(map);
+    all.push([s[0],s[1]]);
+  });
+  map.fitBounds(all,{padding:[28,28]});
+  document.querySelectorAll('.legend .lg').forEach(function(el){
+    el.addEventListener('click',function(){
+      var d=el.getAttribute('data-day');
+      if(map.hasLayer(groups[d])){map.removeLayer(groups[d]);el.classList.add('off');}
+      else{map.addLayer(groups[d]);el.classList.remove('off');}
+    });
+  });
 })();
 </script>
 </body>
