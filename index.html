@@ -1,79 +1,110 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>제주 3박 4일 여행 일정 · 2026.06</title>
+<script>
+  (function(){
+    try{
+      var KEY='jeju-theme', t=localStorage.getItem(KEY);
+      if(!t){ t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: light)').matches)?'light':'dark'; }
+      document.documentElement.setAttribute('data-theme', t);
+    }catch(e){}
+  })();
+</script>
 <style>
-  :root{
-    --bg:#0f1720; --card:#16212e; --card2:#1c2a3a; --line:#27384b;
+  :root, html[data-theme="dark"]{
+    --bg1:#0c131c; --bg2:#0f1720; --bg3:#101b27;
+    --card:#16212e; --card2:#1c2a3a; --line:#27384b;
     --txt:#e8eef5; --muted:#9fb2c6; --accent:#3ea6ff; --accent2:#ff8a5c;
-    --ok:#37d399; --warn:#ffcf5c; --pink:#ff7eb6;
+    --ok:#37d399; --warn:#ffcf5c; --pink:#ff7eb6; --shadow:rgba(0,0,0,.3);
+  }
+  html[data-theme="light"]{
+    --bg1:#eef3fa; --bg2:#f5f8fc; --bg3:#e9f0f8;
+    --card:#ffffff; --card2:#f1f6fc; --line:#dde6f0;
+    --txt:#1b2734; --muted:#5b6b7d; --accent:#1a73e8; --accent2:#e2622a;
+    --ok:#0f9d63; --warn:#b5820a; --pink:#d6337a; --shadow:rgba(40,70,110,.12);
   }
   *{box-sizing:border-box}
+  html,body{margin:0}
   body{
-    margin:0; font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",sans-serif;
-    background:linear-gradient(160deg,#0c131c,#0f1720 40%,#101b27); color:var(--txt);
-    line-height:1.6; -webkit-font-smoothing:antialiased;
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Malgun Gothic",sans-serif;
+    background:linear-gradient(160deg,var(--bg1),var(--bg2) 40%,var(--bg3)); color:var(--txt);
+    line-height:1.6; -webkit-font-smoothing:antialiased; transition:background .3s,color .3s;
+    min-height:100vh;
   }
-  .wrap{max-width:880px; margin:0 auto; padding:28px 18px 80px}
+  .wrap{max-width:880px; margin:0 auto; padding:24px 18px 80px}
+  .topbar{display:flex; justify-content:flex-end; margin-bottom:10px}
+  .toggle{
+    background:var(--card); color:var(--txt); border:1px solid var(--line);
+    border-radius:999px; padding:7px 14px; font-size:13px; font-weight:600; cursor:pointer;
+    box-shadow:0 2px 10px var(--shadow); transition:.2s;
+  }
+  .toggle:hover{border-color:var(--accent)}
   header.hero{
     background:linear-gradient(135deg,#16344f,#1a4b6e 50%,#155e63);
     border-radius:20px; padding:30px 26px; position:relative; overflow:hidden;
-    box-shadow:0 10px 40px rgba(0,0,0,.35);
+    box-shadow:0 10px 40px var(--shadow); color:#eaf4fb;
   }
   header.hero:after{content:"🏝️"; position:absolute; right:18px; top:8px; font-size:90px; opacity:.18}
   .hero h1{margin:0 0 8px; font-size:26px; letter-spacing:-.4px}
   .hero .sub{color:#d6e8f5; font-size:15px}
   .chips{margin-top:16px; display:flex; flex-wrap:wrap; gap:8px}
-  .chip{background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.18);
-    padding:5px 12px; border-radius:999px; font-size:13px; backdrop-filter:blur(4px)}
+  .chip{background:rgba(255,255,255,.13); border:1px solid rgba(255,255,255,.2);
+    padding:5px 12px; border-radius:999px; font-size:13px}
   h2{font-size:19px; margin:34px 0 14px; display:flex; align-items:center; gap:9px}
   h2 .bar{width:4px; height:20px; background:var(--accent); border-radius:3px; display:inline-block}
   .card{background:var(--card); border:1px solid var(--line); border-radius:16px;
-    padding:18px 18px; margin-bottom:14px; box-shadow:0 4px 18px rgba(0,0,0,.2)}
-  table{width:100%; border-collapse:collapse; font-size:14px}
+    padding:18px; margin-bottom:14px; box-shadow:0 4px 18px var(--shadow); transition:background .3s,border .3s}
+  table{width:100%; border-collapse:collapse; font-size:13.8px}
   th,td{text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top}
-  th{color:var(--muted); font-weight:600; font-size:12.5px; text-transform:none; white-space:nowrap}
+  th{color:var(--muted); font-weight:600; font-size:12.5px; white-space:nowrap}
   tr:last-child td{border-bottom:none}
   .kv td:first-child{color:var(--muted); width:34%; white-space:nowrap}
   .b{font-weight:700}
-  .tag{display:inline-block; padding:2px 9px; border-radius:7px; font-size:12px; font-weight:600}
-  .t-ok{background:rgba(55,211,153,.15); color:var(--ok); border:1px solid rgba(55,211,153,.3)}
-  .t-wait{background:rgba(255,207,92,.13); color:var(--warn); border:1px solid rgba(255,207,92,.3)}
-  .t-pink{background:rgba(255,126,182,.13); color:var(--pink); border:1px solid rgba(255,126,182,.3)}
+  .tag{display:inline-block; padding:2px 9px; border-radius:7px; font-size:12px; font-weight:600; white-space:nowrap}
+  .t-ok{background:color-mix(in srgb,var(--ok) 16%,transparent); color:var(--ok); border:1px solid color-mix(in srgb,var(--ok) 35%,transparent)}
+  .t-wait{background:color-mix(in srgb,var(--warn) 14%,transparent); color:var(--warn); border:1px solid color-mix(in srgb,var(--warn) 35%,transparent)}
+  .t-pink{background:color-mix(in srgb,var(--pink) 14%,transparent); color:var(--pink); border:1px solid color-mix(in srgb,var(--pink) 35%,transparent)}
+  .t-a{background:color-mix(in srgb,var(--accent) 14%,transparent); color:var(--accent); border:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
   .note{background:var(--card2); border-left:3px solid var(--accent); border-radius:8px;
-    padding:10px 14px; margin:12px 0; font-size:13.5px; color:#cfe0f0}
-  .warn{border-left-color:var(--warn); background:rgba(255,207,92,.07)}
-  .day{margin-bottom:16px}
-  .day-head{display:flex; align-items:center; gap:10px; margin-bottom:0}
-  .day-badge{background:var(--accent); color:#04121f; font-weight:800; border-radius:10px;
+    padding:10px 14px; margin:12px 0; font-size:13.5px}
+  .note.warn{border-left-color:var(--warn)}
+  .day-head{display:flex; align-items:center; gap:10px; margin-bottom:4px; flex-wrap:wrap}
+  .day-badge{background:var(--accent); color:#fff; font-weight:800; border-radius:10px;
     padding:6px 11px; font-size:14px; white-space:nowrap}
+  html[data-theme="dark"] .day-badge{color:#04121f}
   .day-title{font-weight:700; font-size:15.5px}
   .day-region{color:var(--accent2); font-size:13px; margin-left:auto; white-space:nowrap}
-  .tl{list-style:none; margin:14px 0 6px; padding:0; position:relative}
+  .plan-label{font-size:13px; font-weight:700; color:var(--accent); margin:10px 0 2px}
+  .tl{list-style:none; margin:10px 0 6px; padding:0; position:relative}
   .tl:before{content:""; position:absolute; left:62px; top:6px; bottom:6px; width:2px; background:var(--line)}
-  .tl li{position:relative; padding:7px 0 7px 84px; font-size:14px}
+  .tl li{position:relative; padding:7px 0 7px 84px; font-size:13.8px}
   .tl li .time{position:absolute; left:0; top:7px; width:54px; text-align:right; color:var(--accent);
     font-size:12.5px; font-weight:600}
   .tl li:before{content:""; position:absolute; left:57px; top:13px; width:11px; height:11px;
     background:var(--card); border:2px solid var(--accent); border-radius:50%}
   .tl li.hi:before{background:var(--accent2); border-color:var(--accent2)}
-  .sleep{margin-top:8px; font-size:13.5px; color:#cbd9e8; background:var(--card2);
-    border-radius:9px; padding:8px 12px}
+  .sleep{margin-top:8px; font-size:13.5px; background:var(--card2); border-radius:9px; padding:8px 12px}
+  .alt{margin-top:8px; font-size:12.8px; color:var(--muted)}
+  .alt b{color:var(--txt)}
   .foot{text-align:center; color:var(--muted); font-size:12.5px; margin-top:34px; line-height:1.8}
-  a{color:var(--accent)}
   @media(max-width:520px){
     .hero h1{font-size:22px}
     .tl:before{left:50px}.tl li{padding-left:70px}.tl li .time{width:44px}.tl li:before{left:45px}
-    .kv td:first-child{width:40%}
-    .day-region{display:none}
+    .kv td:first-child{width:42%}
+    .day-region{flex-basis:100%; margin-left:0}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
+
+  <div class="topbar">
+    <button class="toggle" id="themeBtn" onclick="toggleTheme()">☀️ 라이트</button>
+  </div>
 
   <header class="hero">
     <h1>제주 3박 4일 여행 일정</h1>
@@ -89,11 +120,11 @@
 
   <div class="note">
     <b>컨셉</b> — 섬 자체에 집중하며 많이 돌아다니기 + 요미와 산책 多. 남서부(안덕) 거점에서
-    <b>반시계 방향</b>으로 동쪽으로 이동, 마지막 밤은 공항 근처. 작년 서부·애월 집중 → 올해는 <b>남부·동부</b> 신규 권역.
+    <b>반시계 방향</b>으로 동쪽 이동, 마지막 밤은 공항 근처. 작년 서부·애월 집중 → 올해는 <b>남부·동부</b> 신규 권역.
   </div>
 
   <!-- 항공 -->
-  <h2><span class="bar"></span>✈️ 항공편 <span class="tag t-ok" style="font-weight:600">t'way · 확약</span></h2>
+  <h2><span class="bar"></span>✈️ 항공편 <span class="tag t-ok">t'way · 확약</span></h2>
   <div class="card">
     <div style="margin-bottom:10px; font-size:13.5px; color:var(--muted)">
       예약번호 <span class="b" style="color:var(--txt)">BL5TPH</span> · 총 2명 · 결제 378,000원 (KAKAOPAY, 2026-05-30)
@@ -103,11 +134,11 @@
       <tr><td>가는편</td><td>TW701<br><span style="color:var(--muted);font-size:12px">스마트운임</span></td><td>6/4(목)</td><td class="b">GMP 06:25</td><td>CJU 07:40</td></tr>
       <tr><td>오는편</td><td>TW702<br><span style="color:var(--muted);font-size:12px">일반운임</span></td><td>6/7(일)</td><td class="b">CJU 07:50</td><td>GMP 09:05</td></tr>
     </table>
-    <div class="note warn" style="margin-bottom:0">⏰ 가는편 06:25 출발 → 김포공항 <b>05:00경 도착</b> 권장 (요미 동반 수속). 🐶 반려동물 기내 동반 규정·케이지 규격 t'way 사전 확인.</div>
+    <div class="note warn" style="margin-bottom:0">⏰ 가는편 06:25 출발 → 김포공항 <b>05:00경 도착</b> 권장. 🐶 반려동물 기내 동반 규정·케이지 규격 t'way 사전 확인.</div>
   </div>
 
   <!-- 렌터카 -->
-  <h2><span class="bar"></span>🚗 렌터카 <span class="tag t-wait" style="font-weight:600">예약 예정</span></h2>
+  <h2><span class="bar"></span>🚗 렌터카 <span class="tag t-wait">예약 예정</span></h2>
   <div class="card">
     <table class="kv">
       <tr><td>추천 차종</td><td><span class="b">기아 EV3</span> — 1회 충전 ~500km, 여행 내내 거의 무충전</td></tr>
@@ -123,14 +154,6 @@
   <!-- 숙소 -->
   <h2><span class="bar"></span>🏨 숙소</h2>
   <div class="card">
-    <table>
-      <tr><th>박</th><th>날짜</th><th>숙소</th><th>상태</th></tr>
-      <tr><td>1박</td><td>6/4~6/5</td><td>서귀포 늘바다 애견동반펜션 (진한)</td><td><span class="tag t-ok">확정</span></td></tr>
-      <tr><td>2박</td><td>6/5~6/6</td><td>서귀포 동부(남원·표선) 추천</td><td><span class="tag t-wait">미예약</span></td></tr>
-      <tr><td>3박</td><td>6/6~6/7</td><td>제주시 공항권 (새벽 비행 필수)</td><td><span class="tag t-wait">미예약</span></td></tr>
-    </table>
-  </div>
-  <div class="card">
     <div class="b" style="margin-bottom:10px">1박 · 진한 펜션 <span class="tag t-ok">확정</span></div>
     <table class="kv">
       <tr><td>객실</td><td>진한 (1층 / 애견동반, 개별바베큐)</td></tr>
@@ -140,72 +163,109 @@
       <tr><td>가격</td><td class="b">60,000원</td></tr>
       <tr><td>체크인 / 아웃</td><td><b>15:00 / 11:00</b> (입실 마감 18:00)</td></tr>
       <tr><td>반려견</td><td>O — 말티즈 5kg 미만 1마리</td></tr>
-      <tr><td>주변</td><td>슈퍼 도보 200m · 안덕계곡 차 5분 · 화순 금모래 해변 차 10분</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="b" style="margin-bottom:4px">2박 · 6/5(금) 서귀포 동부(남원·표선) <span class="tag t-wait">미예약</span></div>
+    <div class="alt" style="margin-top:0;margin-bottom:8px">다음날 동부 동선 단축 + 마당에서 요미 활동</div>
+    <table>
+      <tr><th>안</th><th>숙소</th><th>1박</th><th>특징</th></tr>
+      <tr><td><span class="tag t-a">A</span></td><td class="b">남원 오션뷰 애견펜션</td><td>12~18만</td><td>일출뷰·울타리 마당, 12kg↓, 표선해변 10분</td></tr>
+      <tr><td>B</td><td>하젠펜션(독채)</td><td>13~20만</td><td>취사 완비·프라이버시, 표선</td></tr>
+      <tr><td>C</td><td>헤이 서귀포(독채)</td><td>15~22만</td><td>식기·취사 완비, 5kg 추가요금 거의 X</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <div class="b" style="margin-bottom:4px">3박 · 6/6(토) 제주시 공항권 <span class="tag t-wait">미예약</span></div>
+    <div class="note warn" style="margin-top:6px;margin-bottom:8px">⚠️ 6/7 새벽 비행 → 공항 근접 필수. 토요일밤이라 가격·잔실 변동 큼 → <b>빠른 예약 권장</b></div>
+    <table>
+      <tr><th>안</th><th>숙소</th><th>1박</th><th>특징</th></tr>
+      <tr><td><span class="tag t-a">A</span></td><td class="b">메종 글래드 제주</td><td>15~25만+</td><td>연동(공항 10분), 펫 어메니티·펫그라운드. 무게·보증금 ☎064-747-4900</td></tr>
+      <tr><td>B</td><td>애월 애견펜션</td><td>12~18만</td><td>애월(공항 20분), 객실별 인조잔디 운동장</td></tr>
+      <tr><td>C</td><td>제주시 펫 호텔</td><td>4~12만</td><td>시내(공항 10~15분), 가성비 백업</td></tr>
     </table>
   </div>
 
   <!-- 일정 -->
   <h2><span class="bar"></span>📅 일자별 일정</h2>
 
-  <div class="card day">
+  <div class="card">
     <div class="day-head"><span class="day-badge">DAY 1</span><span class="day-title">6/4 (목) · 도착 + 남서부</span><span class="day-region">안덕 거점</span></div>
+    <div class="plan-label">Plan A · 해안절벽 산책 라인</div>
     <ul class="tl">
       <li><span class="time">06:25</span>김포 출발 (TW701) · 자스민주차대행 ☎1877-0149</li>
       <li><span class="time">07:40</span>제주 도착 → EV 렌터카 픽업</li>
-      <li><span class="time">오전</span>송악산 둘레길 (2.8km, 요미 산책)</li>
-      <li><span class="time">점심</span>안덕·사계 애견동반 식당</li>
-      <li><span class="time">오후</span>사계해변·산방산 조망 / 용머리해안(외부)</li>
+      <li class="hi"><span class="time">오전</span>화순곶자왈 생태탐방숲길 (30~40분 평지, 요미 O)</li>
+      <li><span class="time">점심</span>제주해조네(보말죽) or 초밥충전 — 사계·대평</li>
+      <li><span class="time">오후</span>사계해변 / 산방산·용머리 외부 조망 (입장 X)</li>
       <li><span class="time">15:00</span>진한 펜션 체크인 (입실마감 18:00)</li>
-      <li class="hi"><span class="time">늦오후</span>박수기정·대평포구 산책 (펜션 도보권)</li>
-      <li class="hi"><span class="time">저녁</span><b>난드르바당</b> (고기집, 대평리) · <span class="tag t-pink">예약 완료</span></li>
+      <li class="hi"><span class="time">늦오후</span>대평포구~박수기정 아랫길 해안 산책 (약 1km)</li>
+      <li class="hi"><span class="time">저녁</span><b>난드르바당</b> (고기집, 대평) <span class="tag t-pink">예약 완료</span> → 포구 야경 산책</li>
     </ul>
     <div class="sleep">🛏️ 진한 펜션 (안덕)</div>
+    <div class="alt"><b>Plan B(오름)</b> 군산오름+안덕계곡 숲길 · <b>Plan C(우천)</b> 카멜리아힐 실내외 수목원(6월 수국)</div>
   </div>
 
-  <div class="card day">
-    <div class="day-head"><span class="day-badge">DAY 2</span><span class="day-title">6/5 (금) · 남부 서귀포 + 수국</span><span class="day-region">서귀포</span></div>
+  <div class="card">
+    <div class="day-head"><span class="day-badge">DAY 2</span><span class="day-title">6/5 (금) · 남부 서귀포 → 동부</span><span class="day-region">6월 수국</span></div>
+    <div class="plan-label">Plan A · 수국 + 해안 산책 라인</div>
     <ul class="tl">
-      <li class="hi"><span class="time">오전</span><b>카멜리아힐</b> — 6월 수국 절정 (요미 8kg↓ O)</li>
+      <li class="hi"><span class="time">오전</span>외돌개~황우지 선녀탕 해안 산책 (올레7, 30~40분, 요미 O)</li>
       <li class="hi"><span class="time">점심</span><b>서귀포 매일올레시장</b> → 딱새우회·오메기떡 포장</li>
-      <li><span class="time">오후</span>천지연폭포(체고 40cm↓ O) / 쇠소깍·소정방 산책</li>
-      <li><span class="time">저녁</span>숙소에서 시장 포장</li>
+      <li class="hi"><span class="time">오후</span>혼인지 수국축제(~6/20, 무료) → 보롬왓 꽃정원(수국)</li>
+      <li><span class="time">저녁</span>서귀포 동부 숙소 체크인 → 호꼼스낵 / 크랩잭</li>
     </ul>
-    <div class="sleep">🛏️ 추천: 서귀포 동부(남원·표선) — 내일 동부 동선 단축</div>
+    <div class="sleep">🛏️ 추천: 서귀포 동부(남원·표선)</div>
+    <div class="alt"><b>Plan B</b> 카멜리아힐(중문 수국)+천지연·쇠소깍 · <b>Plan C(우천)</b> 보롬왓 온실+카페</div>
   </div>
 
-  <div class="card day">
+  <div class="card">
     <div class="day-head"><span class="day-badge">DAY 3</span><span class="day-title">6/6 (토) · 동부 풀코스</span><span class="day-region">동부</span></div>
+    <div class="plan-label">Plan A · 해변 + 숲 산책 라인</div>
     <ul class="tl">
-      <li><span class="time">오전</span>성산일출봉 주변·광치기해변 / 섭지코지</li>
-      <li><span class="time">점심</span>동부 로컬 (세화·구좌)</li>
-      <li class="hi"><span class="time">오후</span>비자림 숲길 / 월정리·세화·함덕 해변길 산책</li>
-      <li><span class="time">저녁</span>제주시 이동 → 동문시장 or 로컬</li>
+      <li class="hi"><span class="time">오전</span>함덕 서우봉 둘레길 (올레19, 2.5km, 바다·한라산 조망) — 함도그비치 입수 가능</li>
+      <li><span class="time">점심</span>곰막식당 회국수(구좌) or 세화·평대 카페</li>
+      <li class="hi"><span class="time">오후</span>비자림 숲길 A코스 (2.2km 평지, 시니어견 적합) → 종달리 수국길 드라이브</li>
+      <li><span class="time">저녁</span>제주시 이동 → 도토리키친 / 동문시장</li>
     </ul>
     <div class="sleep">🛏️ 추천: 제주시 공항 근처 — 새벽 비행 대비</div>
+    <div class="alt"><b>Plan B</b> 김녕 성세기·월정리 해안 산책 · <b>Plan C(우천)</b> 만장굴(동반 제한 확인) or 동부 실내 카페</div>
   </div>
 
-  <div class="card day">
+  <div class="card">
     <div class="day-head"><span class="day-badge">DAY 4</span><span class="day-title">6/7 (일) · 새벽 복귀</span><span class="day-region">→ 김포</span></div>
     <ul class="tl">
       <li><span class="time">~05:30</span>공항 이동 (요미 수속) · 전날 충전·짐 마무리</li>
       <li><span class="time">07:50</span>제주 출발 (TW702)</li>
       <li><span class="time">09:05</span>김포 도착</li>
     </ul>
-    <div class="sleep warn" style="background:rgba(255,207,92,.07)">⚠️ 관광 일정 없음 — 새벽 출발</div>
+    <div class="sleep warn" style="border-left:3px solid var(--warn)">⚠️ 관광 일정 없음 — 새벽 출발</div>
   </div>
 
   <!-- 식당 -->
   <h2><span class="bar"></span>🍽️ 식당</h2>
   <div class="card">
+    <div class="note" style="margin-top:0">고기 감흥 없음 → <b>회·해산물·향토 위주</b> (첫날 저녁만 난드르바당 확정). 로컬 식당은 수요일·브레이크타임 잦음 → 방문 전 전화 확인.</div>
     <table>
-      <tr><th>때</th><th>식당</th><th>위치</th><th>비고</th></tr>
-      <tr><td>6/4 점심</td><td>안덕·사계 애견동반 식당</td><td>안덕</td><td>요미 O</td></tr>
-      <tr><td>6/4 저녁</td><td class="b">난드르바당 (고기집)</td><td>대평리</td><td><span class="tag t-pink">예약 완료</span></td></tr>
-      <tr><td>6/5 한 끼</td><td>서귀포 매일올레시장 (포장)</td><td>서귀포</td><td>딱새우회·오메기떡</td></tr>
-      <tr><td>6/6</td><td>동문시장 / 동부 로컬</td><td>제주시·동부</td><td>고등어회·한치</td></tr>
-      <tr><td>카페</td><td>풀베개(안덕) · 안도르(동부)</td><td>안덕·동부</td><td>애견동반 테라스</td></tr>
+      <tr><th>끼니</th><th>Plan A (추천)</th><th>Plan B (대안)</th></tr>
+      <tr><td>6/4 점심</td><td>제주해조네<br><span style="color:var(--muted);font-size:12px">보말죽·성게미역국, 대평</span></td><td>초밥충전 (화순)</td></tr>
+      <tr><td>6/4 저녁</td><td class="b">난드르바당 <span class="tag t-pink">예약</span><br><span style="color:var(--muted);font-size:12px">고기집, 대평</span></td><td>—</td></tr>
+      <tr><td>6/5 한 끼</td><td>매일올레시장 포장<br><span style="color:var(--muted);font-size:12px">딱새우회·오메기떡</span></td><td>앙끄레국수 (법환)</td></tr>
+      <tr><td>6/5 저녁</td><td>호꼼스낵<br><span style="color:var(--muted);font-size:12px">공천포 바닷가 해산물</span></td><td>제주 크랩잭 (테라스)</td></tr>
+      <tr><td>6/6 점심</td><td>곰막식당<br><span style="color:var(--muted);font-size:12px">회국수·성게국수, 구좌</span></td><td>파도소리 해녀촌 (우도)</td></tr>
+      <tr><td>6/6 저녁</td><td>도토리키친<br><span style="color:var(--muted);font-size:12px">물회·전복돌솥밥, 제주시</span></td><td>동문시장 회 포장</td></tr>
     </table>
-    <div class="note" style="margin-bottom:0">작년 방문 참고: 용왕난드르식당(대평 향토백반)·해물라면·우도 짜장면·고기국수+돔베고기.</div>
+    <div class="b" style="margin:14px 0 6px">반려견 동반 카페</div>
+    <table>
+      <tr><th>권역</th><th>카페</th></tr>
+      <tr><td>남서부·애월</td><td>멍멍플레이스(돌담 마당) · 애월더선셋(오션뷰, 실외)</td></tr>
+      <tr><td>서귀포</td><td>마루호텔앤카페(잔디 운동장) · 텐저린카페</td></tr>
+      <tr><td>동부</td><td>제이아일랜드(성산 오션뷰) · 어니스트밀크(목장)</td></tr>
+      <tr><td>제주시</td><td>카페 비글(화 휴무) · 블리스풀(잔디 운동장)</td></tr>
+    </table>
+    <div class="alt">작년 방문(중복 회피): 고기국수+돔베고기 · 용왕난드르식당 · 산방산해물라면 · 우도 짜장면</div>
   </div>
 
   <!-- 요미 -->
@@ -213,6 +273,7 @@
   <div class="card">
     <table class="kv">
       <tr><td>항공</td><td>반려동물 운송 규정·케이지 규격·추가요금 사전 확인 (가는편/오는편)</td></tr>
+      <tr><td>☀️ 더위</td><td>6월 한낮 아스팔트 발바닥 화상 주의 → <b>산책은 오전·해질녘</b>, 한낮은 카페·차량 휴식</td></tr>
       <tr><td>컨디션</td><td>시니어견 — 무리한 일정 자제, 차량 내 충분한 휴식</td></tr>
       <tr><td>방문 전</td><td>식당·카페·관광지 반려견 동반 가능 여부 전화 재확인</td></tr>
       <tr><td>준비물</td><td>사료·간식·배변봉투·물그릇·이동장·리드줄(2m)</td></tr>
@@ -225,5 +286,21 @@
   </div>
 
 </div>
+
+<script>
+  function toggleTheme(){
+    var root=document.documentElement;
+    var cur=root.getAttribute('data-theme')==='light'?'light':'dark';
+    var next=cur==='light'?'dark':'light';
+    root.setAttribute('data-theme', next);
+    try{ localStorage.setItem('jeju-theme', next); }catch(e){}
+    syncBtn();
+  }
+  function syncBtn(){
+    var t=document.documentElement.getAttribute('data-theme');
+    document.getElementById('themeBtn').textContent = (t==='light') ? '🌙 다크' : '☀️ 라이트';
+  }
+  syncBtn();
+</script>
 </body>
 </html>
