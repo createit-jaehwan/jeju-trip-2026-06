@@ -91,6 +91,10 @@
   .alt{margin-top:8px; font-size:12.8px; color:var(--muted)}
   .alt b{color:var(--txt)}
   .foot{text-align:center; color:var(--muted); font-size:12.5px; margin-top:34px; line-height:1.8}
+  a{color:var(--accent)}
+  a.lnk{color:inherit; text-decoration:none; border-bottom:1px dotted color-mix(in srgb,var(--accent) 55%,transparent); padding-bottom:1px}
+  a.lnk:hover{color:var(--accent); border-bottom-style:solid}
+  .foot a.lnk{color:var(--muted)}
   @media(max-width:520px){
     .hero h1{font-size:22px}
     .tl:before{left:50px}.tl li{padding-left:70px}.tl li .time{width:44px}.tl li:before{left:45px}
@@ -154,7 +158,7 @@
   <!-- 숙소 -->
   <h2><span class="bar"></span>🏨 숙소</h2>
   <div class="card">
-    <div class="b" style="margin-bottom:10px">1박 · 진한 펜션 <span class="tag t-ok">확정</span></div>
+    <div class="b" style="margin-bottom:10px">1박 · <a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+늘바다+애견동반펜션" target="_blank" rel="noopener">진한 펜션</a> <span class="tag t-ok">확정</span></div>
     <table class="kv">
       <tr><td>객실</td><td>진한 (1층 / 애견동반, 개별바베큐)</td></tr>
       <tr><td>주소</td><td>제주 서귀포시 안덕면 대평로 38</td></tr>
@@ -171,9 +175,9 @@
     <div class="alt" style="margin-top:0;margin-bottom:8px">다음날 동부 동선 단축 + 마당에서 요미 활동</div>
     <table>
       <tr><th>안</th><th>숙소</th><th>1박</th><th>특징</th></tr>
-      <tr><td><span class="tag t-a">A</span></td><td class="b">남원 오션뷰 애견펜션</td><td>12~18만</td><td>일출뷰·울타리 마당, 12kg↓, 표선해변 10분</td></tr>
-      <tr><td>B</td><td>하젠펜션(독채)</td><td>13~20만</td><td>취사 완비·프라이버시, 표선</td></tr>
-      <tr><td>C</td><td>헤이 서귀포(독채)</td><td>15~22만</td><td>식기·취사 완비, 5kg 추가요금 거의 X</td></tr>
+      <tr><td><span class="tag t-a">A</span></td><td class="b"><a class="lnk" href="https://search.naver.com/search.naver?query=제주+남원+오션뷰+애견펜션" target="_blank" rel="noopener">남원 오션뷰 애견펜션</a></td><td>12~18만</td><td>일출뷰·울타리 마당, 12kg↓, 표선해변 10분</td></tr>
+      <tr><td>B</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+표선+하젠펜션" target="_blank" rel="noopener">하젠펜션(독채)</a></td><td>13~20만</td><td>취사 완비·프라이버시, 표선</td></tr>
+      <tr><td>C</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+헤이+서귀포+펜션" target="_blank" rel="noopener">헤이 서귀포(독채)</a></td><td>15~22만</td><td>식기·취사 완비, 5kg 추가요금 거의 X</td></tr>
     </table>
   </div>
 
@@ -182,9 +186,9 @@
     <div class="note warn" style="margin-top:6px;margin-bottom:8px">⚠️ 6/7 새벽 비행 → 공항 근접 필수. 토요일밤이라 가격·잔실 변동 큼 → <b>빠른 예약 권장</b></div>
     <table>
       <tr><th>안</th><th>숙소</th><th>1박</th><th>특징</th></tr>
-      <tr><td><span class="tag t-a">A</span></td><td class="b">메종 글래드 제주</td><td>15~25만+</td><td>연동(공항 10분), 펫 어메니티·펫그라운드. 무게·보증금 ☎064-747-4900</td></tr>
-      <tr><td>B</td><td>애월 애견펜션</td><td>12~18만</td><td>애월(공항 20분), 객실별 인조잔디 운동장</td></tr>
-      <tr><td>C</td><td>제주시 펫 호텔</td><td>4~12만</td><td>시내(공항 10~15분), 가성비 백업</td></tr>
+      <tr><td><span class="tag t-a">A</span></td><td class="b"><a class="lnk" href="https://search.naver.com/search.naver?query=메종글래드+제주" target="_blank" rel="noopener">메종 글래드 제주</a></td><td>15~25만+</td><td>연동(공항 10분), 펫 어메니티·펫그라운드. 무게·보증금 ☎064-747-4900</td></tr>
+      <tr><td>B</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+애월+애견펜션" target="_blank" rel="noopener">애월 애견펜션</a></td><td>12~18만</td><td>애월(공항 20분), 객실별 인조잔디 운동장</td></tr>
+      <tr><td>C</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주시+반려견동반+호텔" target="_blank" rel="noopener">제주시 펫 호텔</a></td><td>4~12만</td><td>시내(공항 10~15분), 가성비 백업</td></tr>
     </table>
   </div>
 
@@ -197,41 +201,41 @@
     <ul class="tl">
       <li><span class="time">06:25</span>김포 출발 (TW701) · 자스민주차대행 ☎1877-0149</li>
       <li><span class="time">07:40</span>제주 도착 → EV 렌터카 픽업</li>
-      <li class="hi"><span class="time">오전</span>화순곶자왈 생태탐방숲길 (30~40분 평지, 요미 O)</li>
-      <li><span class="time">점심</span>제주해조네(보말죽) or 초밥충전 — 사계·대평</li>
-      <li><span class="time">오후</span>사계해변 / 산방산·용머리 외부 조망 (입장 X)</li>
+      <li class="hi"><span class="time">오전</span><a class="lnk" href="https://search.naver.com/search.naver?query=화순곶자왈+생태탐방숲길" target="_blank" rel="noopener">화순곶자왈 생태탐방숲길</a> (30~40분 평지, 요미 O)</li>
+      <li><span class="time">점심</span><a class="lnk" href="https://search.naver.com/search.naver?query=제주해조네+대평" target="_blank" rel="noopener">제주해조네</a>(보말죽) or <a class="lnk" href="https://search.naver.com/search.naver?query=초밥충전+화순" target="_blank" rel="noopener">초밥충전</a> — 사계·대평</li>
+      <li><span class="time">오후</span><a class="lnk" href="https://search.naver.com/search.naver?query=사계해변" target="_blank" rel="noopener">사계해변</a> / <a class="lnk" href="https://search.naver.com/search.naver?query=산방산" target="_blank" rel="noopener">산방산</a>·<a class="lnk" href="https://search.naver.com/search.naver?query=용머리해안" target="_blank" rel="noopener">용머리해안</a> 외부 조망 (입장 X)</li>
       <li><span class="time">15:00</span>진한 펜션 체크인 (입실마감 18:00)</li>
-      <li class="hi"><span class="time">늦오후</span>대평포구~박수기정 아랫길 해안 산책 (약 1km)</li>
-      <li class="hi"><span class="time">저녁</span><b>난드르바당</b> (고기집, 대평) <span class="tag t-pink">예약 완료</span> → 포구 야경 산책</li>
+      <li class="hi"><span class="time">늦오후</span><a class="lnk" href="https://search.naver.com/search.naver?query=대평포구" target="_blank" rel="noopener">대평포구</a>~<a class="lnk" href="https://search.naver.com/search.naver?query=박수기정" target="_blank" rel="noopener">박수기정</a> 아랫길 해안 산책 (약 1km)</li>
+      <li class="hi"><span class="time">저녁</span><a class="lnk" href="https://search.naver.com/search.naver?query=난드르바당" target="_blank" rel="noopener"><b>난드르바당</b></a> (고기집, 대평) <span class="tag t-pink">예약 완료</span> → 포구 야경 산책</li>
     </ul>
     <div class="sleep">🛏️ 진한 펜션 (안덕)</div>
-    <div class="alt"><b>Plan B(오름)</b> 군산오름+안덕계곡 숲길 · <b>Plan C(우천)</b> 카멜리아힐 실내외 수목원(6월 수국)</div>
+    <div class="alt"><b>Plan B(오름)</b> <a class="lnk" href="https://search.naver.com/search.naver?query=군산오름" target="_blank" rel="noopener">군산오름</a>+<a class="lnk" href="https://search.naver.com/search.naver?query=안덕계곡" target="_blank" rel="noopener">안덕계곡</a> 숲길 · <b>Plan C(우천)</b> <a class="lnk" href="https://search.naver.com/search.naver?query=카멜리아힐" target="_blank" rel="noopener">카멜리아힐</a> 실내외 수목원(6월 수국)</div>
   </div>
 
   <div class="card">
     <div class="day-head"><span class="day-badge">DAY 2</span><span class="day-title">6/5 (금) · 남부 서귀포 → 동부</span><span class="day-region">6월 수국</span></div>
     <div class="plan-label">Plan A · 수국 + 해안 산책 라인</div>
     <ul class="tl">
-      <li class="hi"><span class="time">오전</span>외돌개~황우지 선녀탕 해안 산책 (올레7, 30~40분, 요미 O)</li>
-      <li class="hi"><span class="time">점심</span><b>서귀포 매일올레시장</b> → 딱새우회·오메기떡 포장</li>
-      <li class="hi"><span class="time">오후</span>혼인지 수국축제(~6/20, 무료) → 보롬왓 꽃정원(수국)</li>
-      <li><span class="time">저녁</span>서귀포 동부 숙소 체크인 → 호꼼스낵 / 크랩잭</li>
+      <li class="hi"><span class="time">오전</span><a class="lnk" href="https://search.naver.com/search.naver?query=외돌개" target="_blank" rel="noopener">외돌개</a>~<a class="lnk" href="https://search.naver.com/search.naver?query=황우지+선녀탕" target="_blank" rel="noopener">황우지 선녀탕</a> 해안 산책 (올레7, 30~40분, 요미 O)</li>
+      <li class="hi"><span class="time">점심</span><a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+매일올레시장" target="_blank" rel="noopener"><b>서귀포 매일올레시장</b></a> → 딱새우회·오메기떡 포장</li>
+      <li class="hi"><span class="time">오후</span><a class="lnk" href="https://search.naver.com/search.naver?query=혼인지" target="_blank" rel="noopener">혼인지</a> 수국축제(~6/20, 무료) → <a class="lnk" href="https://search.naver.com/search.naver?query=보롬왓" target="_blank" rel="noopener">보롬왓 꽃정원</a>(수국)</li>
+      <li><span class="time">저녁</span>서귀포 동부 숙소 체크인 → <a class="lnk" href="https://search.naver.com/search.naver?query=호꼼스낵+공천포" target="_blank" rel="noopener">호꼼스낵</a> / <a class="lnk" href="https://search.naver.com/search.naver?query=제주+크랩잭" target="_blank" rel="noopener">크랩잭</a></li>
     </ul>
     <div class="sleep">🛏️ 추천: 서귀포 동부(남원·표선)</div>
-    <div class="alt"><b>Plan B</b> 카멜리아힐(중문 수국)+천지연·쇠소깍 · <b>Plan C(우천)</b> 보롬왓 온실+카페</div>
+    <div class="alt"><b>Plan B</b> <a class="lnk" href="https://search.naver.com/search.naver?query=카멜리아힐" target="_blank" rel="noopener">카멜리아힐</a>(중문 수국)+<a class="lnk" href="https://search.naver.com/search.naver?query=천지연폭포" target="_blank" rel="noopener">천지연</a>·<a class="lnk" href="https://search.naver.com/search.naver?query=쇠소깍" target="_blank" rel="noopener">쇠소깍</a> · <b>Plan C(우천)</b> 보롬왓 온실+카페</div>
   </div>
 
   <div class="card">
     <div class="day-head"><span class="day-badge">DAY 3</span><span class="day-title">6/6 (토) · 동부 풀코스</span><span class="day-region">동부</span></div>
     <div class="plan-label">Plan A · 해변 + 숲 산책 라인</div>
     <ul class="tl">
-      <li class="hi"><span class="time">오전</span>함덕 서우봉 둘레길 (올레19, 2.5km, 바다·한라산 조망) — 함도그비치 입수 가능</li>
-      <li><span class="time">점심</span>곰막식당 회국수(구좌) or 세화·평대 카페</li>
-      <li class="hi"><span class="time">오후</span>비자림 숲길 A코스 (2.2km 평지, 시니어견 적합) → 종달리 수국길 드라이브</li>
-      <li><span class="time">저녁</span>제주시 이동 → 도토리키친 / 동문시장</li>
+      <li class="hi"><span class="time">오전</span><a class="lnk" href="https://search.naver.com/search.naver?query=함덕+서우봉+둘레길" target="_blank" rel="noopener">함덕 서우봉 둘레길</a> (올레19, 2.5km, 바다·한라산 조망) — <a class="lnk" href="https://search.naver.com/search.naver?query=함덕+함도그비치" target="_blank" rel="noopener">함도그비치</a> 입수 가능</li>
+      <li><span class="time">점심</span><a class="lnk" href="https://search.naver.com/search.naver?query=곰막식당" target="_blank" rel="noopener">곰막식당</a> 회국수(구좌) or 세화·평대 카페</li>
+      <li class="hi"><span class="time">오후</span><a class="lnk" href="https://search.naver.com/search.naver?query=비자림" target="_blank" rel="noopener">비자림</a> 숲길 A코스 (2.2km 평지, 시니어견 적합) → <a class="lnk" href="https://search.naver.com/search.naver?query=종달리+수국길" target="_blank" rel="noopener">종달리 수국길</a> 드라이브</li>
+      <li><span class="time">저녁</span>제주시 이동 → <a class="lnk" href="https://search.naver.com/search.naver?query=도토리키친+제주" target="_blank" rel="noopener">도토리키친</a> / <a class="lnk" href="https://search.naver.com/search.naver?query=제주+동문시장" target="_blank" rel="noopener">동문시장</a></li>
     </ul>
     <div class="sleep">🛏️ 추천: 제주시 공항 근처 — 새벽 비행 대비</div>
-    <div class="alt"><b>Plan B</b> 김녕 성세기·월정리 해안 산책 · <b>Plan C(우천)</b> 만장굴(동반 제한 확인) or 동부 실내 카페</div>
+    <div class="alt"><b>Plan B</b> <a class="lnk" href="https://search.naver.com/search.naver?query=김녕+성세기해변" target="_blank" rel="noopener">김녕 성세기</a>·<a class="lnk" href="https://search.naver.com/search.naver?query=월정리해변" target="_blank" rel="noopener">월정리</a> 해안 산책 · <b>Plan C(우천)</b> <a class="lnk" href="https://search.naver.com/search.naver?query=만장굴" target="_blank" rel="noopener">만장굴</a>(동반 제한 확인) or 동부 실내 카페</div>
   </div>
 
   <div class="card">
@@ -250,20 +254,20 @@
     <div class="note" style="margin-top:0">고기 감흥 없음 → <b>회·해산물·향토 위주</b> (첫날 저녁만 난드르바당 확정). 로컬 식당은 수요일·브레이크타임 잦음 → 방문 전 전화 확인.</div>
     <table>
       <tr><th>끼니</th><th>Plan A (추천)</th><th>Plan B (대안)</th></tr>
-      <tr><td>6/4 점심</td><td>제주해조네<br><span style="color:var(--muted);font-size:12px">보말죽·성게미역국, 대평</span></td><td>초밥충전 (화순)</td></tr>
-      <tr><td>6/4 저녁</td><td class="b">난드르바당 <span class="tag t-pink">예약</span><br><span style="color:var(--muted);font-size:12px">고기집, 대평</span></td><td>—</td></tr>
-      <tr><td>6/5 한 끼</td><td>매일올레시장 포장<br><span style="color:var(--muted);font-size:12px">딱새우회·오메기떡</span></td><td>앙끄레국수 (법환)</td></tr>
-      <tr><td>6/5 저녁</td><td>호꼼스낵<br><span style="color:var(--muted);font-size:12px">공천포 바닷가 해산물</span></td><td>제주 크랩잭 (테라스)</td></tr>
-      <tr><td>6/6 점심</td><td>곰막식당<br><span style="color:var(--muted);font-size:12px">회국수·성게국수, 구좌</span></td><td>파도소리 해녀촌 (우도)</td></tr>
-      <tr><td>6/6 저녁</td><td>도토리키친<br><span style="color:var(--muted);font-size:12px">물회·전복돌솥밥, 제주시</span></td><td>동문시장 회 포장</td></tr>
+      <tr><td>6/4 점심</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주해조네+대평" target="_blank" rel="noopener">제주해조네</a><br><span style="color:var(--muted);font-size:12px">보말죽·성게미역국, 대평</span></td><td><a class="lnk" href="https://search.naver.com/search.naver?query=초밥충전+화순" target="_blank" rel="noopener">초밥충전</a> (화순)</td></tr>
+      <tr><td>6/4 저녁</td><td class="b"><a class="lnk" href="https://search.naver.com/search.naver?query=난드르바당" target="_blank" rel="noopener">난드르바당</a> <span class="tag t-pink">예약</span><br><span style="color:var(--muted);font-size:12px">고기집, 대평</span></td><td>—</td></tr>
+      <tr><td>6/5 한 끼</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+매일올레시장" target="_blank" rel="noopener">매일올레시장 포장</a><br><span style="color:var(--muted);font-size:12px">딱새우회·오메기떡</span></td><td><a class="lnk" href="https://search.naver.com/search.naver?query=앙끄레국수+법환" target="_blank" rel="noopener">앙끄레국수</a> (법환)</td></tr>
+      <tr><td>6/5 저녁</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=호꼼스낵+공천포" target="_blank" rel="noopener">호꼼스낵</a><br><span style="color:var(--muted);font-size:12px">공천포 바닷가 해산물</span></td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+크랩잭" target="_blank" rel="noopener">제주 크랩잭</a> (테라스)</td></tr>
+      <tr><td>6/6 점심</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=곰막식당" target="_blank" rel="noopener">곰막식당</a><br><span style="color:var(--muted);font-size:12px">회국수·성게국수, 구좌</span></td><td><a class="lnk" href="https://search.naver.com/search.naver?query=우도+파도소리+해녀촌" target="_blank" rel="noopener">파도소리 해녀촌</a> (우도)</td></tr>
+      <tr><td>6/6 저녁</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=도토리키친+제주" target="_blank" rel="noopener">도토리키친</a><br><span style="color:var(--muted);font-size:12px">물회·전복돌솥밥, 제주시</span></td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+동문시장" target="_blank" rel="noopener">동문시장</a> 회 포장</td></tr>
     </table>
     <div class="b" style="margin:14px 0 6px">반려견 동반 카페</div>
     <table>
       <tr><th>권역</th><th>카페</th></tr>
-      <tr><td>남서부·애월</td><td>멍멍플레이스(돌담 마당) · 애월더선셋(오션뷰, 실외)</td></tr>
-      <tr><td>서귀포</td><td>마루호텔앤카페(잔디 운동장) · 텐저린카페</td></tr>
-      <tr><td>동부</td><td>제이아일랜드(성산 오션뷰) · 어니스트밀크(목장)</td></tr>
-      <tr><td>제주시</td><td>카페 비글(화 휴무) · 블리스풀(잔디 운동장)</td></tr>
+      <tr><td>남서부·애월</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+멍멍플레이스+애월" target="_blank" rel="noopener">멍멍플레이스</a>(돌담 마당) · <a class="lnk" href="https://search.naver.com/search.naver?query=애월더선셋" target="_blank" rel="noopener">애월더선셋</a>(오션뷰, 실외)</td></tr>
+      <tr><td>서귀포</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+마루호텔앤카페" target="_blank" rel="noopener">마루호텔앤카페</a>(잔디 운동장) · <a class="lnk" href="https://search.naver.com/search.naver?query=텐저린카페+제주" target="_blank" rel="noopener">텐저린카페</a></td></tr>
+      <tr><td>동부</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=성산+제이아일랜드+카페" target="_blank" rel="noopener">제이아일랜드</a>(성산 오션뷰) · <a class="lnk" href="https://search.naver.com/search.naver?query=어니스트밀크+카페" target="_blank" rel="noopener">어니스트밀크</a>(목장)</td></tr>
+      <tr><td>제주시</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=조천+카페+비글" target="_blank" rel="noopener">카페 비글</a>(화 휴무) · <a class="lnk" href="https://search.naver.com/search.naver?query=제주+블리스풀+카페" target="_blank" rel="noopener">블리스풀</a>(잔디 운동장)</td></tr>
     </table>
     <div class="alt">작년 방문(중복 회피): 고기국수+돔베고기 · 용왕난드르식당 · 산방산해물라면 · 우도 짜장면</div>
   </div>
@@ -281,6 +285,7 @@
   </div>
 
   <div class="foot">
+    🔗 <b>장소명</b>을 누르면 네이버 검색(지도·리뷰·블로그)으로 연결됩니다.<br>
     🏝️ 즐거운 제주 여행 되세요! 요미도 건강하게 🐾<br>
     제주 3박 4일 · 2026.06.04~07
   </div>
