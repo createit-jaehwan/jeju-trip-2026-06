@@ -76,6 +76,11 @@
   .note{background:var(--card2); border-left:3px solid var(--accent); border-radius:8px;
     padding:10px 14px; margin:12px 0; font-size:13.5px}
   .note.warn{border-left-color:var(--warn)}
+  .budget-grid{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-bottom:12px}
+  .budget-box{background:var(--card2); border:1px solid var(--line); border-radius:10px; padding:12px}
+  .budget-box .label{color:var(--muted); font-size:12.5px; font-weight:600}
+  .budget-box .money{font-size:20px; font-weight:800; margin-top:4px; color:var(--txt)}
+  .budget-box .memo{font-size:12.5px; color:var(--muted); margin-top:2px}
   .day-head{display:flex; align-items:center; gap:10px; margin-bottom:4px; flex-wrap:wrap}
   .day-badge{background:var(--accent); color:#fff; font-weight:800; border-radius:10px;
     padding:6px 11px; font-size:14px; white-space:nowrap}
@@ -108,6 +113,7 @@
   .mk-e{font-size:18px;line-height:22px;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.5)}
   @media(max-width:520px){
     .hero h1{font-size:22px}
+    .budget-grid{grid-template-columns:1fr}
     .tl:before{left:54px}.tl li{padding-left:74px}.tl li .time{width:46px}.tl li:before{left:49px}
     .kv td:first-child{width:42%}
     .day-region{flex-basis:100%; margin-left:0}
@@ -129,6 +135,7 @@
       <span class="chip">🚗 니로 하이브리드</span>
       <span class="chip">🚶 산책 위주</span>
       <span class="chip">🍤 로컬 먹거리</span>
+      <span class="chip">💰 예상 125~160만</span>
       <span class="chip">🌺 6월 수국</span>
     </div>
   </header>
@@ -207,6 +214,66 @@
       <tr><td>주의</td><td>바다 야경 기대는 낮게. 6/7 새벽 출발이라 짐 정리는 전날 밤에 끝내기</td></tr>
     </table>
     <div class="alt">대안: 새벽 안전 최우선이면 공항 5~10분권 시내 호텔. 감성·반려견 휴식은 해밀 쪽이 더 편함.</div>
+  </div>
+
+  <!-- 예산 -->
+  <h2><span class="bar"></span>💰 여행 예상금액</h2>
+  <div class="card">
+    <div class="budget-grid">
+      <div class="budget-box">
+        <div class="label">전체 여행가</div>
+        <div class="money">약 125~160만</div>
+        <div class="memo">2명+요미, 항공 포함</div>
+      </div>
+      <div class="budget-box">
+        <div class="label">이미 잡힌 고정비</div>
+        <div class="money">약 59.8만</div>
+        <div class="memo">항공·렌터카·1/2박</div>
+      </div>
+      <div class="budget-box">
+        <div class="label">남은 결제/현장비</div>
+        <div class="money">약 65~100만</div>
+        <div class="memo">3박·식사·입장·주유</div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:0">먹는 것을 중요하게 보는 일정이라 <b>현실 예산은 145만 전후</b>, 편하게 쓰려면 <b>160만</b>을 상한으로 잡는 쪽이 마음 편함. 식사 메뉴와 숙소 객실가에 따라 가장 크게 변동.</div>
+    <table>
+      <tr><th>항목</th><th>기준</th><th>예상금액</th></tr>
+      <tr><td>항공</td><td>t'way 왕복 2명 · 결제 완료</td><td class="b">378,000원</td></tr>
+      <tr><td>렌터카</td><td>니로 하이브리드 88,000 + 새벽반납 10,000</td><td class="b">98,000원</td></tr>
+      <tr><td>숙소 확정분</td><td>진한 60,000 + 스테이반하나 62,000</td><td class="b">122,000원</td></tr>
+      <tr><td>3박 해밀</td><td>오션뷰 기준 객실가 + 요미 10,000 현장결제 예상</td><td class="b">90,000~120,000원</td></tr>
+      <tr><td>식사·시장·카페</td><td>보말/성게, 흑돼지, 갈치, 곰막식당, 동문시장, 카페 2~3회</td><td class="b">390,000~620,000원</td></tr>
+      <tr><td>입장권·주차</td><td>카멜리아힐·천지연·보롬왓·비밀의숲 + 시장/관광지 주차</td><td class="b">55,000~80,000원</td></tr>
+      <tr><td>주유</td><td>니로 하이브리드, 3박4일 동서남북 이동</td><td class="b">60,000~80,000원</td></tr>
+      <tr><td>예비비</td><td>편의점·간식·우천 대체·요미 용품·예상 밖 주차/택시</td><td class="b">60,000~100,000원</td></tr>
+    </table>
+    <div class="alt">해밀리조트는 공개 예약가 기준 마운틴뷰 5만대·오션뷰 8만대가 보이며, 6/6 토요일 실제 객실가와 쿠폰은 결제 직전 확인 필요. 여기어때 안내 기준 반려견은 10kg 미만 1마리 10,000원 현장결제.</div>
+  </div>
+
+  <div class="card">
+    <div class="b" style="margin-bottom:8px">🍽️ 식사 예산 상세</div>
+    <table>
+      <tr><th>날짜</th><th>먹는 흐름</th><th>예상금액</th></tr>
+      <tr><td>6/4</td><td>제주해조네 보말·성게 점심 + 난드르바당 흑돼지 저녁 + 간식</td><td class="b">140,000~205,000원</td></tr>
+      <tr><td>6/5</td><td>매일올레시장 포장 + 카페 다운타임 + 갈치 식사(가볍게면 호꼼스낵)</td><td class="b">110,000~185,000원</td></tr>
+      <tr><td>6/6</td><td>곰막식당 회국수·성게국수 + 카페 + 동문시장 회센터·야시장</td><td class="b">130,000~210,000원</td></tr>
+      <tr><td>6/7</td><td>공항 커피·간단한 아침</td><td class="b">10,000~25,000원</td></tr>
+    </table>
+    <div class="alt">갈치 저녁을 제대로 먹으면 상단, 호꼼스낵처럼 가볍게 가면 하단에 가까움. 동문시장은 회+야시장까지 살리면 7~11만 정도로 잡는 게 현실적.</div>
+  </div>
+
+  <div class="card">
+    <div class="b" style="margin-bottom:8px">🎟️ 입장권·주차 상세</div>
+    <table>
+      <tr><th>장소</th><th>기준</th><th>예상금액</th></tr>
+      <tr><td>카멜리아힐</td><td>성인 2명, 현장가 기준</td><td class="b">약 20,000원</td></tr>
+      <tr><td>천지연폭포</td><td>성인 2명, 공영관광지</td><td class="b">약 4,000원</td></tr>
+      <tr><td>보롬왓</td><td>성인 2명</td><td class="b">약 12,000원</td></tr>
+      <tr><td>안돌오름 비밀의 숲</td><td>성인 2명, 사유지 입장</td><td class="b">약 8,000원</td></tr>
+      <tr><td>주차·잡비</td><td>동문시장, 섭지코지/함덕 등 유료 주차 발생 시</td><td class="b">10,000~25,000원</td></tr>
+    </table>
+    <div class="alt">한담·협재/금능·외돌개·혼인지·광치기·함덕 산책은 기본 무료로 계산. 카멜리아힐/보롬왓은 온라인 예매 할인 여부에 따라 조금 내려갈 수 있음.</div>
   </div>
 
   <!-- 지도 -->
