@@ -84,11 +84,11 @@
   .day-region{color:var(--accent2); font-size:13px; margin-left:auto; white-space:nowrap}
   .plan-label{font-size:13px; font-weight:700; color:var(--accent); margin:10px 0 2px}
   .tl{list-style:none; margin:10px 0 6px; padding:0; position:relative}
-  .tl:before{content:""; position:absolute; left:86px; top:6px; bottom:6px; width:2px; background:var(--line)}
-  .tl li{position:relative; padding:7px 0 7px 112px; font-size:13.8px}
-  .tl li .time{position:absolute; left:0; top:7px; width:78px; text-align:right; color:var(--accent);
+  .tl:before{content:""; position:absolute; left:64px; top:6px; bottom:6px; width:2px; background:var(--line)}
+  .tl li{position:relative; padding:7px 0 7px 90px; font-size:13.8px}
+  .tl li .time{position:absolute; left:0; top:7px; width:54px; text-align:right; color:var(--accent);
     font-size:12.5px; font-weight:600}
-  .tl li:before{content:""; position:absolute; left:81px; top:13px; width:11px; height:11px;
+  .tl li:before{content:""; position:absolute; left:59px; top:13px; width:11px; height:11px;
     background:var(--card); border:2px solid var(--accent); border-radius:50%}
   .tl li.hi:before{background:var(--accent2); border-color:var(--accent2)}
   .sleep{margin-top:8px; font-size:13.5px; background:var(--card2); border-radius:9px; padding:8px 12px}
@@ -108,7 +108,7 @@
   .mk-e{font-size:18px;line-height:22px;text-align:center;text-shadow:0 1px 3px rgba(0,0,0,.5)}
   @media(max-width:520px){
     .hero h1{font-size:22px}
-    .tl:before{left:72px}.tl li{padding-left:94px}.tl li .time{width:64px}.tl li:before{left:67px}
+    .tl:before{left:54px}.tl li{padding-left:74px}.tl li .time{width:46px}.tl li:before{left:49px}
     .kv td:first-child{width:42%}
     .day-region{flex-basis:100%; margin-left:0}
   }
@@ -167,7 +167,7 @@
       <tr><td>반납</td><td>6/7 새벽 반납 = <b>+10,000원 현장결제</b> (정규 셔틀 시간 외)</td></tr>
       <tr><td>요미</td><td>케이지 동반 — 조이렌트카에 ☎ 사전 확인</td></tr>
     </table>
-    <div class="note warn" style="margin-bottom:0">✅ 6/7 새벽 반납 해결(+1만 현장결제). 비행 07:50 → 06:15~06:25 반납 권장. <b>1만에 공항 이동 포함인지 확인</b>(아니면 카카오T 10분).</div>
+    <div class="note warn" style="margin-bottom:0">✅ 6/7 새벽 반납 해결(+1만 현장결제). 비행 07:50 → <b>06:15까지 반납소 도착</b>, 06:25 전후 공항 이동 목표. <b>1만에 공항 이동 포함인지 확인</b>(아니면 카카오T 10분).</div>
   </div>
 
   <!-- 숙소 -->
@@ -232,20 +232,20 @@
     <div class="plan-label">Plan A · 서쪽 해안 크게 도는 라인</div>
     <ul class="tl">
       <li><span class="time">06:25</span>김포 출발 (TW701) · 자스민주차대행 ☎1877-0149</li>
-      <li><span class="time">07:40-08:40</span>제주 도착 → 수하물·요미 정리 → 셔틀 → 조이렌트카 니로 픽업</li>
-      <li><span class="time">08:40-09:20</span>공항권 → 애월 <a class="lnk" href="https://search.naver.com/search.naver?query=애월+한담해안산책로" target="_blank" rel="noopener">한담해안산책로</a> 이동</li>
-      <li class="hi"><span class="time">09:20-10:10</span>한담해안산책로 산책 · 요미 첫 산책, 바다 컨디션 확인</li>
-      <li><span class="time">10:10-10:40</span>한담 → <a class="lnk" href="https://search.naver.com/search.naver?query=협재해변" target="_blank" rel="noopener">협재·금능 해변</a> 이동</li>
-      <li class="hi"><span class="time">10:40-11:20</span>협재·금능 짧게 체류 · 사진/바다만 보고 무리하지 않기</li>
-      <li><span class="time">11:20-12:15</span>협재·금능 → 대평 <a class="lnk" href="https://search.naver.com/search.naver?query=제주해조네+대평" target="_blank" rel="noopener">제주해조네</a> 이동</li>
-      <li class="hi"><span class="time">12:15-13:10</span>점심: 보말칼국수·보말죽·성게미역국·성게비빔밥</li>
-      <li><span class="time">13:10-13:35</span>대평 → <a class="lnk" href="https://search.naver.com/search.naver?query=카멜리아힐" target="_blank" rel="noopener">카멜리아힐</a> 이동</li>
-      <li class="hi"><span class="time">13:35-14:35</span>카멜리아힐 수국 · 더우면 그늘 정원 위주로 60분 제한</li>
-      <li><span class="time">14:35-15:00</span>카멜리아힐 → 진한 펜션 이동</li>
-      <li><span class="time">15:00-16:30</span>진한 펜션 체크인·샤워·낮잠/휴식</li>
-      <li class="hi"><span class="time">16:40-17:20</span><a class="lnk" href="https://search.naver.com/search.naver?query=대평포구" target="_blank" rel="noopener">대평포구</a>~<a class="lnk" href="https://search.naver.com/search.naver?query=박수기정" target="_blank" rel="noopener">박수기정</a> 산책</li>
-      <li class="hi"><span class="time">17:30-18:50</span><a class="lnk" href="https://search.naver.com/search.naver?query=난드르바당" target="_blank" rel="noopener"><b>난드르바당</b></a> <span class="tag t-pink">예약 완료</span> · 제주 흑돼지구이 + 딱새우 된장찌개</li>
-      <li><span class="time">19:00-21:00</span>숙소 복귀·짐 정리·취침 준비</li>
+      <li><span class="time">07:40</span>제주 도착 → 수하물·요미 정리 → 셔틀 → 조이렌트카 니로 픽업</li>
+      <li><span class="time">08:40</span>공항권 → 애월 <a class="lnk" href="https://search.naver.com/search.naver?query=애월+한담해안산책로" target="_blank" rel="noopener">한담해안산책로</a> 이동</li>
+      <li class="hi"><span class="time">09:20</span>한담해안산책로 산책 · 요미 첫 산책, 바다 컨디션 확인</li>
+      <li><span class="time">10:10</span>한담 → <a class="lnk" href="https://search.naver.com/search.naver?query=협재해변" target="_blank" rel="noopener">협재·금능 해변</a> 이동</li>
+      <li class="hi"><span class="time">10:40</span>협재·금능 짧게 체류 · 사진/바다만 보고 무리하지 않기</li>
+      <li><span class="time">11:20</span>협재·금능 → 대평 <a class="lnk" href="https://search.naver.com/search.naver?query=제주해조네+대평" target="_blank" rel="noopener">제주해조네</a> 이동</li>
+      <li class="hi"><span class="time">12:15</span>점심: 보말칼국수·보말죽·성게미역국·성게비빔밥</li>
+      <li><span class="time">13:10</span>대평 → <a class="lnk" href="https://search.naver.com/search.naver?query=카멜리아힐" target="_blank" rel="noopener">카멜리아힐</a> 이동</li>
+      <li class="hi"><span class="time">13:35</span>카멜리아힐 수국 · 더우면 그늘 정원 위주로 60분 제한</li>
+      <li><span class="time">14:35</span>카멜리아힐 → 진한 펜션 이동</li>
+      <li><span class="time">15:00</span>진한 펜션 체크인·샤워·낮잠/휴식</li>
+      <li class="hi"><span class="time">16:40</span><a class="lnk" href="https://search.naver.com/search.naver?query=대평포구" target="_blank" rel="noopener">대평포구</a>~<a class="lnk" href="https://search.naver.com/search.naver?query=박수기정" target="_blank" rel="noopener">박수기정</a> 산책</li>
+      <li class="hi"><span class="time">17:30</span><a class="lnk" href="https://search.naver.com/search.naver?query=난드르바당" target="_blank" rel="noopener"><b>난드르바당</b></a> <span class="tag t-pink">예약 완료</span> · 제주 흑돼지구이 + 딱새우 된장찌개</li>
+      <li><span class="time">19:00</span>숙소 복귀·짐 정리·21:00 전 취침 준비</li>
     </ul>
     <div class="sleep">🛏️ 진한 펜션 (안덕)</div>
     <div class="alt"><b>조정</b> 아침형 리듬 기준으로 D1은 송악산·용머리 입장·화순곶자왈을 메인에서 제외. 시간이 남으면 사계/산방산은 차창 조망만.</div>
@@ -255,19 +255,19 @@
     <div class="day-head"><span class="day-badge">DAY 2</span><span class="day-title">6/5 (금) · 남부 서귀포 → 동부</span><span class="day-region">6월 수국</span></div>
     <div class="plan-label">Plan A · 수국 + 해안 산책 라인</div>
     <ul class="tl">
-      <li><span class="time">08:30-09:05</span>진한 펜션 → <a class="lnk" href="https://search.naver.com/search.naver?query=외돌개" target="_blank" rel="noopener">외돌개</a> 이동</li>
-      <li class="hi"><span class="time">09:05-09:50</span>외돌개~황우지 선녀탕 해안 산책 · 올레7 일부, 요미 30~40분</li>
-      <li><span class="time">09:50-10:05</span>외돌개 → <a class="lnk" href="https://search.naver.com/search.naver?query=천지연폭포" target="_blank" rel="noopener">천지연폭포</a> 이동</li>
-      <li class="hi"><span class="time">10:05-10:40</span>천지연폭포 · 요미는 안고서 입장, 짧게 관람</li>
-      <li><span class="time">10:40-10:50</span>천지연 → <a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+매일올레시장" target="_blank" rel="noopener">서귀포 매일올레시장</a> 이동</li>
-      <li class="hi"><span class="time">10:50-12:00</span>시장 점심: 딱새우회·고등어/한치회·꽁치김밥·오메기떡 중 포장</li>
-      <li><span class="time">12:00-13:40</span>🍃 카페 다운타임 · 더위 회피, 요미 물/낮잠</li>
-      <li><span class="time">13:40-14:30</span>서귀포권 카페 → <a class="lnk" href="https://search.naver.com/search.naver?query=보롬왓" target="_blank" rel="noopener">보롬왓</a> 이동</li>
-      <li class="hi"><span class="time">14:30-15:30</span>보롬왓 수국 · 꽃정원 60분 제한</li>
-      <li><span class="time">15:30-16:05</span>보롬왓 → 스테이반하나 이동</li>
-      <li><span class="time">16:05-17:20</span>체크인·휴식·요미 컨디션 확인</li>
-      <li class="hi"><span class="time">17:30-18:40</span>저녁: 갈치조림·갈치구이·갈치국 또는 가볍게 호꼼스낵</li>
-      <li><span class="time">19:10-21:00</span>숙소 복귀·취침 준비</li>
+      <li><span class="time">08:30</span>진한 펜션 → <a class="lnk" href="https://search.naver.com/search.naver?query=외돌개" target="_blank" rel="noopener">외돌개</a> 이동</li>
+      <li class="hi"><span class="time">09:05</span>외돌개~황우지 선녀탕 해안 산책 · 올레7 일부, 요미 30~40분</li>
+      <li><span class="time">09:50</span>외돌개 → <a class="lnk" href="https://search.naver.com/search.naver?query=천지연폭포" target="_blank" rel="noopener">천지연폭포</a> 이동</li>
+      <li class="hi"><span class="time">10:05</span>천지연폭포 · 요미는 안고서 입장, 짧게 관람</li>
+      <li><span class="time">10:40</span>천지연 → <a class="lnk" href="https://search.naver.com/search.naver?query=서귀포+매일올레시장" target="_blank" rel="noopener">서귀포 매일올레시장</a> 이동</li>
+      <li class="hi"><span class="time">10:50</span>시장 점심: 딱새우회·고등어/한치회·꽁치김밥·오메기떡 중 포장</li>
+      <li><span class="time">12:00</span>🍃 카페 다운타임 · 더위 회피, 요미 물/낮잠</li>
+      <li><span class="time">13:40</span>서귀포권 카페 → <a class="lnk" href="https://search.naver.com/search.naver?query=보롬왓" target="_blank" rel="noopener">보롬왓</a> 이동</li>
+      <li class="hi"><span class="time">14:30</span>보롬왓 수국 · 꽃정원 60분 제한</li>
+      <li><span class="time">15:30</span>보롬왓 → 스테이반하나 이동</li>
+      <li><span class="time">16:05</span>체크인·휴식·요미 컨디션 확인</li>
+      <li class="hi"><span class="time">17:30</span>저녁: 갈치조림·갈치구이·갈치국 또는 가볍게 호꼼스낵</li>
+      <li><span class="time">19:10</span>숙소 복귀·21:00 전 취침 준비</li>
     </ul>
     <div class="sleep">🛏️ 스테이반하나(남원) ✅ 확정 · 62,000원</div>
     <div class="alt"><b>조정</b> 시장 전에 천지연을 먼저 보고, 12시대는 카페에서 쉬는 구조. 일찍 자는 리듬을 위해 19시대 숙소 복귀.</div>
@@ -277,22 +277,22 @@
     <div class="day-head"><span class="day-badge">DAY 3</span><span class="day-title">6/6 (토) · 동부 풀코스</span><span class="day-region">동부</span></div>
     <div class="plan-label">Plan A · 동부 해변 + 숲 산책 라인</div>
     <ul class="tl">
-      <li><span class="time">07:40-08:15</span>스테이반하나 → <a class="lnk" href="https://search.naver.com/search.naver?query=혼인지" target="_blank" rel="noopener">혼인지</a> 이동</li>
-      <li class="hi"><span class="time">08:15-08:55</span>혼인지 수국 · 무료, 한옥+수국 사진 짧게</li>
-      <li><span class="time">08:55-09:15</span>혼인지 → <a class="lnk" href="https://search.naver.com/search.naver?query=섭지코지" target="_blank" rel="noopener">섭지코지</a> 이동</li>
-      <li class="hi"><span class="time">09:15-10:20</span>섭지코지·광치기 · 평탄한 구간만, 성산일출봉 본체는 제외</li>
-      <li><span class="time">10:20-11:10</span>성산권 → <a class="lnk" href="https://search.naver.com/search.naver?query=곰막식당" target="_blank" rel="noopener">곰막식당</a> 이동</li>
-      <li class="hi"><span class="time">11:10-12:10</span>점심: 회국수·성게국수·활전복죽·고등어회</li>
-      <li><span class="time">12:10-13:30</span>🍃 구좌/평대 카페 다운타임 · 사람 많은 곳 피해서 쉬기</li>
-      <li><span class="time">13:30-14:00</span>카페 → <a class="lnk" href="https://search.naver.com/search.naver?query=안돌오름+비밀의숲" target="_blank" rel="noopener">안돌오름 비밀의 숲</a> 이동</li>
-      <li class="hi"><span class="time">14:00-14:50</span>안돌오름 비밀의 숲 · 편백 숲 산책, 목줄 필수</li>
-      <li><span class="time">14:50-15:25</span>안돌오름 → <a class="lnk" href="https://search.naver.com/search.naver?query=함덕+서우봉+둘레길" target="_blank" rel="noopener">함덕·서우봉</a> 이동</li>
-      <li class="hi"><span class="time">15:25-16:05</span>함덕·서우봉 아주 짧게 · 함도그비치 입수 가능 여부만 체크</li>
-      <li><span class="time">16:05-17:30</span>함덕 → 동문시장 이동·주차·요미 케어 분담</li>
-      <li class="hi"><span class="time">18:00-18:50</span><a class="lnk" href="https://search.naver.com/search.naver?query=제주+동문시장" target="_blank" rel="noopener"><b>동문시장</b></a> 일반시장/회센터: 딱새우회·고등어회·한치회·전복회 포장</li>
-      <li class="hi"><span class="time">19:00-19:25</span>동문야시장: 전복버터구이·해산물구이 1~2개만 추가</li>
-      <li><span class="time">19:30-20:10</span>동문시장 → 제주 해밀리조트 펜션 이동</li>
-      <li><span class="time">20:20-21:30</span>숙소 취식·샤워·다음날 새벽 짐 정리·취침</li>
+      <li><span class="time">07:40</span>스테이반하나 → <a class="lnk" href="https://search.naver.com/search.naver?query=혼인지" target="_blank" rel="noopener">혼인지</a> 이동</li>
+      <li class="hi"><span class="time">08:15</span>혼인지 수국 · 무료, 한옥+수국 사진 짧게</li>
+      <li><span class="time">08:55</span>혼인지 → <a class="lnk" href="https://search.naver.com/search.naver?query=섭지코지" target="_blank" rel="noopener">섭지코지</a> 이동</li>
+      <li class="hi"><span class="time">09:15</span>섭지코지·광치기 · 평탄한 구간만, 성산일출봉 본체는 제외</li>
+      <li><span class="time">10:20</span>성산권 → <a class="lnk" href="https://search.naver.com/search.naver?query=곰막식당" target="_blank" rel="noopener">곰막식당</a> 이동</li>
+      <li class="hi"><span class="time">11:10</span>점심: 회국수·성게국수·활전복죽·고등어회</li>
+      <li><span class="time">12:10</span>🍃 구좌/평대 카페 다운타임 · 사람 많은 곳 피해서 쉬기</li>
+      <li><span class="time">13:30</span>카페 → <a class="lnk" href="https://search.naver.com/search.naver?query=안돌오름+비밀의숲" target="_blank" rel="noopener">안돌오름 비밀의 숲</a> 이동</li>
+      <li class="hi"><span class="time">14:00</span>안돌오름 비밀의 숲 · 편백 숲 산책, 목줄 필수</li>
+      <li><span class="time">14:50</span>안돌오름 → <a class="lnk" href="https://search.naver.com/search.naver?query=함덕+서우봉+둘레길" target="_blank" rel="noopener">함덕·서우봉</a> 이동</li>
+      <li class="hi"><span class="time">15:25</span>함덕·서우봉 아주 짧게 · 함도그비치 입수 가능 여부만 체크</li>
+      <li><span class="time">16:05</span>함덕 → 동문시장 이동·주차·요미 케어 분담</li>
+      <li class="hi"><span class="time">18:00</span><a class="lnk" href="https://search.naver.com/search.naver?query=제주+동문시장" target="_blank" rel="noopener"><b>동문시장</b></a> 일반시장/회센터: 딱새우회·고등어회·한치회·전복회 포장</li>
+      <li class="hi"><span class="time">19:00</span>동문야시장: 전복버터구이·해산물구이 1~2개만 추가, 19:25쯤 마무리</li>
+      <li><span class="time">19:30</span>동문시장 → 제주 해밀리조트 펜션 이동</li>
+      <li><span class="time">20:20</span>숙소 취식·샤워·다음날 새벽 짐 정리·21:30까지 취침</li>
     </ul>
     <div class="sleep">🛏️ 제주 해밀리조트 펜션(애월) 예정 — 야시장 후 바로 숙소 취식</div>
     <div class="alt"><b>조정</b> D3는 가장 긴 날. 야시장을 살리되 함덕을 짧게 줄이고, 21:30 취침을 목표로 함.</div>
@@ -302,10 +302,10 @@
     <div class="day-head"><span class="day-badge">DAY 4</span><span class="day-title">6/7 (일) · 새벽 복귀</span><span class="day-region">→ 김포</span></div>
     <ul class="tl">
       <li><span class="time">05:20</span>기상·요미/짐 정리</li>
-      <li><span class="time">05:45-06:15</span>해밀리조트 → 조이렌트카 반납소 이동</li>
-      <li><span class="time">06:15-06:25</span>차량 반납(+1만 현장결제) · 공항 이동 포함 여부 확인</li>
-      <li><span class="time">06:30-06:40</span>공항 도착</li>
-      <li><span class="time">06:40-07:30</span>요미 수속·체크인·보안검색</li>
+      <li><span class="time">05:45</span>해밀리조트 → 조이렌트카 반납소 이동 · 06:15까지 도착 목표</li>
+      <li><span class="time">06:15</span>차량 반납(+1만 현장결제) · 06:25 전후 공항 이동 목표</li>
+      <li><span class="time">06:30</span>공항 도착</li>
+      <li><span class="time">06:40</span>요미 수속·체크인·보안검색 · 07:30까지 게이트 이동</li>
       <li><span class="time">07:50</span>제주 출발 (TW702)</li>
       <li><span class="time">09:05</span>김포 도착</li>
     </ul>
