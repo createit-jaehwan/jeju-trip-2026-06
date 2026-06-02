@@ -286,6 +286,7 @@
       <span class="lg" data-day="d2"><span class="dot" style="background:#3ea6ff"></span>D2 서귀포</span>
       <span class="lg" data-day="d3"><span class="dot" style="background:#37d399"></span>D3 동부</span>
       <span class="lg" data-day="d4"><span class="dot" style="background:#b48cff"></span>D4 새벽반납</span>
+      <span class="lg" data-day="food"><span class="dot" style="background:#ffcf5c"></span>먹거리 후보</span>
       <span>🛏️ 숙소</span>
       <span>✈️ 공항</span>
     </div>
@@ -402,6 +403,15 @@
       <tr><td>6/6 점심</td><td>해녀촌 동복(회국수) · 명리동식당(구좌, 소형견 O) · 성산 고기국수(水휴무·웨이팅)</td></tr>
       <tr><td>6/6 저녁</td><td><a class="lnk" href="https://search.naver.com/search.naver?query=제주+우진해장국" target="_blank" rel="noopener">우진해장국</a>(고사리해장국·몸국·녹두빈대떡, 대기 김) · 도토리키친은 청귤소바·톳유부초밥 집이라 저녁 메인 후보 제외</td></tr>
     </table>
+    <div class="b" style="margin:14px 0 6px">📌 남원·서귀포 추가 먹거리 후보 (보관)</div>
+    <table>
+      <tr><th>후보</th><th>먹을 메뉴</th><th>동선 판단</th></tr>
+      <tr><td class="b"><a class="lnk" href="https://naver.me/5rMzK1IN" target="_blank" rel="noopener">여기고씨네</a></td><td>딱새우회, 고등어회, 갈치회, 딱새우 머리튀김, 딱새우라면</td><td><b>D2 저녁 포장 1순위</b>. 스테이반하나에서 가깝고, 갈치 식사를 빼면 숙소 취식 후보로 좋음</td></tr>
+      <tr><td class="b"><a class="lnk" href="https://naver.me/GXRpwgHK" target="_blank" rel="noopener">제주곶</a></td><td>문어라면, 크림해물라면, 조개라면, 말육회·딱새우장·전복장 유부밥, 튀김</td><td><b>D2 천지연/매일올레시장 근처 점심 후보</b>. 라면이라 저탄수는 약하고, 작년 해물라면 중복이면 백업</td></tr>
+      <tr><td class="b"><a class="lnk" href="https://naver.me/FAQxgnlp" target="_blank" rel="noopener">공새미59</a></td><td>딱새우덮밥, 보말칼국수, 흑돼지간장덮밥, 성게·전복 덮밥류</td><td><b>D2 점심 대체 후보</b>. 서귀포에서 남원 숙소로 넘어가는 길에 자연스럽고, 요미는 가방/캐리어 동반 정보 있음</td></tr>
+      <tr><td class="b"><a class="lnk" href="https://naver.me/x8ipJrJw" target="_blank" rel="noopener">동선제면가</a></td><td>몰망국수(몸국국수), 흑돼지고기국수, 흑돼지비빔국수, 돔베고기 세트</td><td><b>D2 점심 후보</b>. 스테이반하나 근처라 위치는 좋지만 16시 전후 마감이라 저녁 후보는 아님</td></tr>
+    </table>
+    <div class="alt">추천 우선순위: 갈치 안 먹는 날이면 <b>여기고씨네 포장</b>이 가장 실전적. 점심을 앉아서 먹고 싶으면 공새미59 또는 동선제면가, 정방폭포/천지연 쪽에 머물면 제주곶.</div>
     <div class="b" style="margin:14px 0 6px">반려견 동반 카페 (정기휴무)</div>
     <table>
       <tr><th>권역</th><th>카페</th></tr>
@@ -537,10 +547,17 @@
   var stays=[[33.2300,126.3600,'1박 진한펜션(안덕)','서귀포 늘바다 애견동반펜션'],
              [33.2755,126.7155,'2박 스테이반하나(남원)','제주 스테이반하나 남원'],
              [33.4429,126.3990,'3박 해밀리조트(애월)','제주 해밀리조트 펜션']];
+  var foodCandidates=[
+    [33.3015,126.7665,'여기고씨네','딱새우회·고등어회 포장','https://naver.me/5rMzK1IN'],
+    [33.2450,126.5732,'제주곶','문어라면·크림해물라면','https://naver.me/GXRpwgHK'],
+    [33.2643,126.6406,'공새미59','딱새우덮밥·보말칼국수','https://naver.me/FAQxgnlp'],
+    [33.2830,126.7324,'동선제면가','몰망국수·흑돼지고기국수','https://naver.me/x8ipJrJw']
+  ];
   var map=L.map('map',{scrollWheelZoom:false});
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
     {attribution:'&copy; OpenStreetMap &copy; CARTO',maxZoom:19}).addTo(map);
   function pop(n,q){return '<b>'+n+'</b><br><a href="https://search.naver.com/search.naver?query='+encodeURIComponent(q)+'" target="_blank" rel="noopener">네이버에서 보기 ↗</a>';}
+  function popDirect(n,m,u){return '<b>'+n+'</b><br>'+m+'<br><a href="'+u+'" target="_blank" rel="noopener">네이버지도 열기 ↗</a>';}
   function numIcon(col,n){return L.divIcon({className:'',html:'<div class="mk" style="background:'+col+'">'+n+'</div>',iconSize:[22,22],iconAnchor:[11,11]});}
   function emojiIcon(e){return L.divIcon({className:'',html:'<div class="mk-e">'+e+'</div>',iconSize:[22,22],iconAnchor:[11,11]});}
   var all=[], groups={};
@@ -559,6 +576,13 @@
     L.marker([s[0],s[1]],{icon:emojiIcon('🛏️')}).bindPopup(pop(s[2],s[3])).addTo(map);
     all.push([s[0],s[1]]);
   });
+  var foodLayer=L.layerGroup();
+  foodCandidates.forEach(function(f){
+    L.marker([f[0],f[1]],{icon:emojiIcon('🍽️')}).bindPopup(popDirect(f[2],f[3],f[4])).addTo(foodLayer);
+    all.push([f[0],f[1]]);
+  });
+  foodLayer.addTo(map);
+  groups.food=foodLayer;
   map.fitBounds(all,{padding:[28,28]});
   document.querySelectorAll('.legend .lg').forEach(function(el){
     el.addEventListener('click',function(){
