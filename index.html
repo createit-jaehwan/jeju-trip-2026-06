@@ -121,6 +121,31 @@
 </style>
 </head>
 <body>
+<!-- 간단 비밀번호 게이트 (완벽 보안 아님·클라이언트 전용) -->
+<div id="gate" style="position:fixed;inset:0;z-index:99999;background:#0f1720;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:system-ui,-apple-system,'Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:#e8eef4;padding:24px;text-align:center">
+  <div style="font-size:44px;margin-bottom:8px">🐶🌴</div>
+  <div style="font-size:18px;font-weight:700;margin-bottom:4px">제주여행 일정</div>
+  <div style="font-size:13px;opacity:.6;margin-bottom:22px">비밀번호를 입력하세요</div>
+  <input id="gatePw" type="password" inputmode="numeric" autocomplete="off" placeholder="••••" style="width:170px;text-align:center;font-size:22px;letter-spacing:8px;padding:12px;border-radius:12px;border:1px solid #2b3a48;background:#16212c;color:#e8eef4;outline:none">
+  <button id="gateBtn" style="margin-top:14px;padding:11px 30px;border:0;border-radius:12px;background:#1a4b6e;color:#fff;font-size:15px;font-weight:700;cursor:pointer">열기</button>
+  <div id="gateErr" style="height:18px;margin-top:10px;font-size:13px;color:#ff7a7a;visibility:hidden">비밀번호가 틀렸어요</div>
+</div>
+<script>
+  (function(){
+    var PW='0524', gate=document.getElementById('gate');
+    try{ if(sessionStorage.getItem('jeju-gate')==='ok'){ gate.style.display='none'; return; } }catch(e){}
+    document.documentElement.style.overflow='hidden';
+    function open(){ try{sessionStorage.setItem('jeju-gate','ok');}catch(e){} gate.style.display='none'; document.documentElement.style.overflow=''; }
+    function tryPw(){
+      var v=(document.getElementById('gatePw').value||'').trim();
+      if(v===PW){ open(); }
+      else{ document.getElementById('gateErr').style.visibility='visible'; var i=document.getElementById('gatePw'); i.value=''; i.focus(); }
+    }
+    document.getElementById('gateBtn').addEventListener('click',tryPw);
+    document.getElementById('gatePw').addEventListener('keydown',function(ev){ if(ev.key==='Enter'){ ev.preventDefault(); tryPw(); } });
+    setTimeout(function(){ try{document.getElementById('gatePw').focus();}catch(e){} },60);
+  })();
+</script>
 <div class="wrap">
 
   <div class="topbar">
